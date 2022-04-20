@@ -66,9 +66,12 @@ newItem("assets/sword.png", 500, 405);
 newItem("assets/sheild.png", 165, 185);
 newItem("assets/staff.png", 600, 100);
 
-/*function tile(url,left,bottom) {
-    for(let i=0; i<#;i++) {
-        newImage(url,left,bottom)
+function tile(url, left, bottom, height, width) {
+  for (let h = 0; h < height; h++) {
+    for (let w = 0; w < width; w++) {
+      newImage(url, left + h * 100, bottom + w * 100);
     }
-    } */
-
+  }
+}
+console.log(window.innerHeight)
+console.log(window.innerWidth)
