@@ -37,6 +37,20 @@ object.addEventListener('click', function() {
 })
 }*/
 //did look at the source code, newItem and newImage are added similaly, so re can recall the funtion inside of the new function!
+function tile(url, left, bottom, width, height) {
+    for (let h = 0; h < height; h++) {
+      for (let w = 0; w < width; w++) {
+        newImage(url, left + w * 100, bottom + h * 100);
+      }
+    }
+  }
+  
+  const horizon = window.innerHeight / 1.75;
+  const heightOfSky = window.innerHeight - horizon;
+  const heightOfGrass = horizon;
+  
+  tile("assets/sky.png", 0, horizon, window.innerWidth / 100, heightOfSky / 100);
+  tile("assets/grass.png", 0, 0, window.innerWidth / 100, heightOfGrass / 100);
 
 function newImage(url, left, bottom) {
   const object = document.createElement("img");
@@ -66,19 +80,4 @@ newItem("assets/sword.png", 500, 405);
 newItem("assets/sheild.png", 165, 185);
 newItem("assets/staff.png", 600, 100);
 
-function tile(url, left, bottom, width, height) {
-  for (let h = 0; h < height; h++) {
-    for (let w = 0; w < width; w++) {
-      newImage(url, left + w * 100, bottom + h * 100);
-    }
-  }
-}
-console.log(window.innerHeight);
-console.log(window.innerWidth);
 
-const horizon = window.innerHeight / 1.75;
-const heightOfSky = window.innerHeight - horizon;
-const heightOfGrass = horizon;
-
-tile("assets/sky.png", 0, horizon, window.innerWidth / 100, heightOfSky / 100);
-tile("assets/grass.png", 0, 0, window.innerWidth / 100, heightOfGrass / 100);
