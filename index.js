@@ -12,21 +12,6 @@ pineTree.style.left = '450px'
 pineTree.style.bottom = '200px'
 document.body.append(pineTree) */
 //Hopfully using const will not affect the activity
-function newImage(url, left, bottom) {
-  const object = document.createElement("img");
-  object.src = url;
-  object.style.position = "fixed";
-  object.style.left = left + "px";
-  object.style.bottom = bottom + "px";
-  document.body.append(object);
-  return object;
-}
-newImage("assets/pine-tree.png", 450, 200);
-newImage("assets/green-character.gif", 100, 100);
-newImage("assets/tree.png", 200, 300);
-newImage("assets/pillar.png", 350, 100);
-newImage("assets/crate.png", 150, 200);
-newImage("assets/well.png", 500, 425);
 
 /*const sword = document.createElement('img')
 sword.src = 'assets/sword.png'
@@ -52,14 +37,38 @@ object.addEventListener('click', function() {
 })
 }*/
 //did look at the source code, newItem and newImage are added similaly, so re can recall the funtion inside of the new function!
-function newItem(url, left, bottom){
- const object= newImage (url, left, bottom)
 
- object.addEventListener('dblclick', () => {
-    object.remove()}
- )
+function newImage(url, left, bottom) {
+  const object = document.createElement("img");
+  object.src = url;
+  object.style.position = "fixed";
+  object.style.left = left + "px";
+  object.style.bottom = bottom + "px";
+  document.body.append(object);
+  return object;
+}
+newImage("assets/pine-tree.png", 450, 200);
+newImage("assets/green-character.gif", 100, 100);
+newImage("assets/tree.png", 200, 300);
+newImage("assets/pillar.png", 350, 100);
+newImage("assets/crate.png", 150, 200);
+newImage("assets/well.png", 500, 425);
+
+function newItem(url, left, bottom) {
+  const object = newImage(url, left, bottom);
+
+  object.addEventListener("dblclick", () => {
+    object.remove();
+  });
 }
 
 newItem("assets/sword.png", 500, 405);
 newItem("assets/sheild.png", 165, 185);
 newItem("assets/staff.png", 600, 100);
+
+/*function tile(url,left,bottom) {
+    for(let i=0; i<#;i++) {
+        newImage(url,left,bottom)
+    }
+    } */
+
