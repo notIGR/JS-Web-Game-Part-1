@@ -23,12 +23,12 @@ function newImage(url, left, bottom) {
 }
 newImage("assets/pine-tree.png", 450, 200);
 newImage("assets/green-character.gif", 100, 100);
-newImage("assets/tree.png", 200, 300)
-newImage("assets/pillar.png", 350, 100)
-newImage("assets/crate.png", 150, 200)
-newImage("assets/well.png", 500, 425)
+newImage("assets/tree.png", 200, 300);
+newImage("assets/pillar.png", 350, 100);
+newImage("assets/crate.png", 150, 200);
+newImage("assets/well.png", 500, 425);
 
-const sword = document.createElement('img')
+/*const sword = document.createElement('img')
 sword.src = 'assets/sword.png'
 sword.style.position = 'fixed'
 sword.style.left = '500px'
@@ -37,9 +37,9 @@ document.body.append(sword)
 
 sword.addEventListener('click', function() {
     sword.remove()
-})
+}) */
 
-function newItem(url, left, bottom) {
+/*function newItem(url, left, bottom) {
     const object = document.createElement('img')
 object.src = url;
 object.style.position = 'fixed'
@@ -50,7 +50,16 @@ document.body.append(object)
 object.addEventListener('click', function() {
     object.remove()
 })
+}*/
+//did look at the source code, newItem and newImage are added similaly, so re can recall the funtion inside of the new function!
+function newItem(url, left, bottom){
+ const object= newImage (url, left, bottom)
+
+ object.addEventListener('dblclick', function() {
+    object.remove())
+}
 }
 
-newItem('assets/sheild.png', 165, 185)
-newItem('assets/staff.png', 600, 100)
+newItem("assets/sword.png", 500, 405);
+newItem("assets/sheild.png", 165, 185);
+newItem("assets/staff.png", 600, 100);
