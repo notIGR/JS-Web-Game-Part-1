@@ -38,3 +38,19 @@ document.body.append(sword)
 sword.addEventListener('click', function() {
     sword.remove()
 })
+
+function newItem(url, left, bottom) {
+    const object = document.createElement('img')
+object.src = url;
+object.style.position = 'fixed'
+object.style.left = left + 'px'
+object.style.bottom = bottom + 'px'
+document.body.append(object) 
+
+object.addEventListener('click', function() {
+    object.remove()
+})
+}
+
+newItem('assets/sheild.png', 165, 185)
+newItem('assets/staff.png', 600, 100)
