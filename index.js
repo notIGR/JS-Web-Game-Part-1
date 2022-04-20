@@ -66,19 +66,19 @@ newItem("assets/sword.png", 500, 405);
 newItem("assets/sheild.png", 165, 185);
 newItem("assets/staff.png", 600, 100);
 
-function tile(url, left, bottom, height, width) {
+function tile(url, left, bottom, width, height) {
   for (let h = 0; h < height; h++) {
     for (let w = 0; w < width; w++) {
-      newImage(url, left + h * 100, bottom + w * 100);
+      newImage(url, left + w * 100, bottom + h * 100);
     }
   }
 }
 console.log(window.innerHeight);
 console.log(window.innerWidth);
 
-const grassHeight = horizon;
 const horizon = window.innerHeight / 1.75;
-const skyHeight = window.innerHeight - horizon;
+const heightOfSky = window.innerHeight - horizon;
+const heightOfGrass = horizon;
 
-tile("assets/grass.png", 0, 0, grassHeight / 100, window.innerWidth / 100);
-tile("assets/sky.png", 0, horizon, skyHeight / 100, window.innerWidth / 100);
+tile("assets/sky.png", 0, horizon, window.innerWidth / 100, heightOfSky / 100);
+tile("assets/grass.png", 0, 0, window.innerWidth / 100, heightOfGrass / 100);
