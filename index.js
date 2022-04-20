@@ -78,7 +78,7 @@ console.log(window.innerWidth);
 
 const grassHeight = horizon;
 const horizon = window.innerHeight / 1.75;
-const skyHeight= window.innerHeight-horizon
+const skyHeight = window.innerHeight - horizon;
 
-tile("assets/grass.png", 0, 0, );
-tile("assets/sky.png", 0, "middle of page");
+tile("assets/grass.png", 0, 0, grassHeight / 100, window.innerWidth / 100);
+tile("assets/sky.png", 0, horizon, skyHeight / 100, window.innerWidth / 100);
