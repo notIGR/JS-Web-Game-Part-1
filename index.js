@@ -55,9 +55,9 @@ object.addEventListener('click', function() {
 function newItem(url, left, bottom){
  const object= newImage (url, left, bottom)
 
- object.addEventListener('dblclick', function() {
-    object.remove())
-}
+ object.addEventListener('dblclick', () => {
+    object.remove()}
+ )
 }
 
 newItem("assets/sword.png", 500, 405);
