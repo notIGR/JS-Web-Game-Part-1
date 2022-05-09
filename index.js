@@ -37,6 +37,16 @@ object.addEventListener('click', function() {
 })
 }*/
 //did look at the source code, newItem and newImage are added similaly, so re can recall the funtion inside of the new function!
+const newImage = (url, left, bottom) => {
+  const object = document.createElement("img");
+  object.src = url;
+  object.style.position = "fixed";
+  object.style.left = left + "px";
+  object.style.bottom = bottom + "px";
+  document.body.append(object);
+  return object;
+}
+
 const tile = (url, left, bottom, width, height) => {
     for (let h = 0; h < height; h++) {
       for (let w = 0; w < width; w++) {
@@ -52,15 +62,6 @@ const tile = (url, left, bottom, width, height) => {
   tile("assets/sky.png", 0, horizon, window.innerWidth / 100, heightOfSky / 100);
   tile("assets/grass.png", 0, 0, window.innerWidth / 100, heightOfGrass / 100);
 
-function newImage(url, left, bottom) {
-  const object = document.createElement("img");
-  object.src = url;
-  object.style.position = "fixed";
-  object.style.left = left + "px";
-  object.style.bottom = bottom + "px";
-  document.body.append(object);
-  return object;
-}
 newImage("assets/pine-tree.png", 450, 200);
 newImage("assets/green-character.gif", 100, 100);
 newImage("assets/tree.png", 200, 300);
