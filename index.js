@@ -37,7 +37,7 @@ object.addEventListener('click', function() {
 })
 }*/
 //did look at the source code, newItem and newImage are added similaly, so re can recall the funtion inside of the new function!
-function tile(url, left, bottom, width, height) {
+const tile = (url, left, bottom, width, height) => {
     for (let h = 0; h < height; h++) {
       for (let w = 0; w < width; w++) {
         newImage(url, left + w * 100, bottom + h * 100);
@@ -68,7 +68,7 @@ newImage("assets/pillar.png", 350, 100);
 newImage("assets/crate.png", 150, 200);
 newImage("assets/well.png", 500, 425);
 
-function newItem(url, left, bottom) {
+const newItem = (url, left, bottom) => {
   const object = newImage(url, left, bottom);
 
   object.addEventListener("dblclick", () => {
